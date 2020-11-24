@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Signing demo</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<!-- MATERIAL DESIGN ICONIC FONT -->
+		<link rel="stylesheet" href="fonts/material-design-iconic-font/css/material-design-iconic-font.min.css">
+		
+		<!-- STYLE CSS -->
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+
+	<body>
+
+		<div class="wrapper">
+			<div class="inner">
+				<form action="" onsubmit="return false;">
+					<h3>Signing demo</h3>					
+					<label class="form-group" >
+						<textarea style="height: 200px;" name="" id="action-display" class="form-control" required>
+							{"alias":"USD","name":"US dollars","type":"Fiat","deliveryDecimal":0,"comment":"US dollars","accountName":"Swedbank"}
+						</textarea>
+						<span for="">Your action</span>
+						<!-- <span class="border"></span> -->
+					</label>
+					<button onclick="generateKey(); exportKey();" onsubmit="return false;">Generate key
+						<i class="zmdi zmdi-arrow-right"></i>
+					</button>
+					<button onclick="sign(document.getElementById('action-display').value);">Sign
+						<i class="zmdi zmdi-arrow-right"></i>
+					</button>
+					<button onclick="verify(document.getElementById('action-display').value,storedSignature);">Verify
+						<i class="zmdi zmdi-arrow-right"></i>
+					</button>
+					<label class="form-group" >
+						<textarea id="console-display" style="height: 200px;" class="form-control"></textarea>
+					</label>
+				</form>
+			</div>
+		</div>
+		<script src="demo.js"></script>
+	</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>
